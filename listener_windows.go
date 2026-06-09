@@ -1,6 +1,6 @@
 //go:build windows
 
-package sock
+package zsocket
 
 import (
 	"context"

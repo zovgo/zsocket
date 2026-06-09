@@ -1,6 +1,6 @@
 //go:build !windows && !unix
 
-package sock
+package zsocket
 
 import (
 	"context"

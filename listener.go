@@ -1,4 +1,4 @@
-package sock
+package zsocket
 
 import (
 	"context"
