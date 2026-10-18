@@ -84,3 +84,5 @@ func (l *pipeListener) catchContext() {
 		_ = l.li.Close()
 	})
 }
+
+//todo мы  с пацанами не поддерживаем дублирование кода pipelistenr
