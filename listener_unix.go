@@ -38,8 +38,10 @@ func listen(parent context.Context, path string, _, _ int32, _, errorIfUsed bool
 
 func tryDial(parent context.Context, path string, timeout time.Duration) bool {
 	ctx, cancel := context.WithTimeout(parent, timeout)
-	conn, err := dial(ctx, path)
-	cancel()
+	conn, err := func() (*pipeConn, error) {
+		defer cancel()
+		return dial(ctx, path)
+	}()
 	if err == nil {
 		_ = conn.Close()
 		return true
